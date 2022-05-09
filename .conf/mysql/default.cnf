@@ -1,0 +1,78 @@
+[client]
+default-character-set=utf8mb4
+
+[mysql]
+port = 3306
+socket = /var/lib/mysql/mysql.sock
+default-character-set=utf8mb4
+
+[mysqld]
+innodb_use_native_aio = 0
+disable-log-bin = 1
+default-authentication-plugin = mysql_native_password
+bind_address = 0.0.0.0
+datadir = /var/lib/mysql
+pid_file = /var/lib/mysql/mysql.pid
+port = 3306
+skip_external_locking
+socket = /var/lib/mysql/mysql.sock
+tmpdir = /tmp
+user = mysql
+event_scheduler = off
+collation-server = utf8mb4_unicode_ci
+character-set-server = utf8mb4
+sql_mode=""
+
+max_allowed_packet = 256M
+max_connect_errors = 1000000
+max_connections = 1000
+# max_execution_time
+max_statement_time = 30000
+max_heap_table_size = 128M
+
+key_buffer_size = 32M
+innodb_sort_buffer_size = 2M
+join_buffer_size = 4M
+read_buffer_size = 3M
+read_rnd_buffer_size = 4M
+sort_buffer_size = 4M
+
+back_log = 512
+thread_cache_size = 100
+thread_stack = 192K
+
+table_definition_cache = 40000
+table_open_cache = 40000
+open_files_limit = 60000
+
+interactive_timeout = 180
+wait_timeout = 180
+
+tmp_table_size = 128M
+
+ft_min_word_len = 3
+low_priority_updates = 1
+concurrent_insert = 2
+
+#log_error = /var/lib/mysql/mysql_error.log
+#log_queries_not_using_indexes = 1
+#long_query_time = 5
+#slow_query_log = 0
+#slow_query_log_file = /var/lib/mysql/mysql_slow.log
+
+default_storage_engine = InnoDB
+innodb_buffer_pool_size = 7G
+innodb_file_per_table = 1
+innodb_flush_log_at_trx_commit = 0
+innodb_flush_method = O_DIRECT
+innodb_log_buffer_size = 16M
+innodb_log_file_size = 1G
+innodb_stats_on_metadata = 0
+innodb_temp_data_file_path = ibtmp1:64M:autoextend:max:20G
+innodb_read_io_threads = 64
+innodb_write_io_threads = 64
+
+[mysqldump]
+quick
+quote_names
+max_allowed_packet = 512M

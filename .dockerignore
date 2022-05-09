@@ -1,0 +1,13 @@
+.git/
+.data/
+.infra/
+docker-compose.yml
+
+bedrock/.env
+bedrock/**/vendor
+bedrock/web/app/plugins/*
+bedrock/web/app/mu-plugins/*/
+bedrock/web/app/upgrade
+bedrock/web/app/uploads/*
+bedrock/web/app/cache/*
+bedrock/web/wp
